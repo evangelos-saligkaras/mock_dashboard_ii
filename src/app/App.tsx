@@ -1,4 +1,5 @@
 import { useState } from "react";
+import mapChoropleth from "../imports/de001.png";
 import {
   LineChart,
   Line,
@@ -229,6 +230,7 @@ export default function App() {
     nest: true,
   });
   const [selectedPoint, setSelectedPoint] = useState<ObsPoint | null>(null);
+  const [showChoropleth, setShowChoropleth] = useState(false);
 
   const filteredObs = OBSERVATIONS.filter(
     (o) => art === "alle" || o.type === art
@@ -623,29 +625,86 @@ export default function App() {
                 Karte der Beobachtungen
               </h2>
               <div className="flex items-center gap-0.5">
-                {[
-                  { icon: <ZoomIn size={14} />, title: "Vergrößern" },
-                  { icon: <ZoomOut size={14} />, title: "Verkleinern" },
-                  { icon: <RotateCcw size={14} />, title: "Kartenausschnitt zurücksetzen" },
-                  { icon: <Maximize2 size={14} />, title: "Vollbild" },
-                ].map(({ icon, title }) => (
-                  <button
-                    key={title}
-                    type="button"
-                    title={title}
-                    className="p-1.5 rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {icon}
-                  </button>
-                ))}
+                {showChoropleth && (
+                  <span className="text-[10px] font-medium text-primary bg-primary/10 border border-primary/20 rounded px-2 py-0.5 mr-1">
+                    Übersicht nach Bundesland
+                  </span>
+                )}
+                <button
+                  type="button"
+                  title="Vergrößern – Beobachtungspunkte"
+                  onClick={() => setShowChoropleth(false)}
+                  className={`p-1.5 rounded transition-colors ${!showChoropleth ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}
+                >
+                  <ZoomIn size={14} />
+                </button>
+                <button
+                  type="button"
+                  title="Verkleinern – Übersicht nach Bundesland"
+                  onClick={() => setShowChoropleth(true)}
+                  className={`p-1.5 rounded transition-colors ${showChoropleth ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}
+                >
+                  <ZoomOut size={14} />
+                </button>
+                <button
+                  type="button"
+                  title="Zurücksetzen"
+                  onClick={() => { setShowChoropleth(false); setSelectedPoint(null); }}
+                  className="p-1.5 rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <RotateCcw size={14} />
+                </button>
+                <button
+                  type="button"
+                  title="Vollbild"
+                  className="p-1.5 rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Maximize2 size={14} />
+                </button>
               </div>
             </div>
 
-            {/* SVG Map */}
+            {/* Map area */}
             <div
               className="relative"
               style={{ background: "#DAE8D4", height: 520 }}
             >
+              {/* ── Choropleth image view (Verkleinern) ── */}
+              {showChoropleth && (
+                <div className="absolute inset-0 flex items-center justify-center p-4 bg-[#DAE8D4]">
+                  <img
+                    src={mapChoropleth}
+                    alt="Deutschland – Dominante Art je Bundesland (Choroplethenkarte)"
+                    className="h-full w-auto object-contain drop-shadow-md"
+                    style={{ maxWidth: "100%" }}
+                  />
+                  {/* Choropleth legend */}
+                  <div className="absolute bottom-4 left-4 bg-white/94 backdrop-blur-sm rounded-md p-2.5 shadow-sm border border-border">
+                    <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">
+                      Dominante Art je Bundesland
+                    </div>
+                    {[
+                      { color: SP.asian.color, label: SP.asian.label },
+                      { color: SP.european.color, label: SP.european.label },
+                    ].map(({ color, label }) => (
+                      <div key={label} className="flex items-center gap-2 mb-1 last:mb-0">
+                        <div className="w-3 h-3 rounded-sm shrink-0" style={{ background: color }} />
+                        <span className="text-[11px] text-foreground">{label}</span>
+                      </div>
+                    ))}
+                    <div className="text-[9px] text-muted-foreground mt-1.5 italic">
+                      Farbintensität ≙ Meldungsanzahl
+                    </div>
+                  </div>
+                  <div className="absolute bottom-4 right-4 text-[9px] text-gray-500 text-right">
+                    © Geodaten [Platzhalter]
+                  </div>
+                </div>
+              )}
+
+              {/* ── Dot-map SVG view (Vergrößern) ── */}
+              {!showChoropleth && (
+              <>
               <svg
                 viewBox="0 0 340 420"
                 className="w-full h-full"
@@ -807,6 +866,8 @@ export default function App() {
                     </div>
                   </div>
                 </div>
+              )}
+              </>
               )}
             </div>
 
