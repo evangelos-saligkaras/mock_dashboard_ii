@@ -1,0 +1,473 @@
+Create a polished but deliberately simple, editable desktop web-dashboard mockup for a volunteer data-for-good project between CorrelAid Berlin and NABU.
+
+PROJECT NAME
+“European and Asian Hornet Observations”
+
+PURPOSE OF THIS MOCKUP
+This is a discussion mockup for stakeholder review, not an approved final design and not a production application.
+
+Its purpose is to help NABU, CorrelAid, the Research Team and the Dashboard Team agree on:
+
+* what the public dashboard should communicate;
+* which information belongs in the main view;
+* which filters and visualizations are useful;
+* which features belong in the MVP;
+* which features should be postponed;
+* whether a CorrelAid-hosted dashboard is desirable.
+
+Add a clearly visible banner near the top:
+
+“ENTWURF – Diskussionsgrundlage – keine finale oder produktive Version”
+
+Do not make the design look officially approved or already deployed.
+
+PRIMARY AUDIENCE
+Design primarily for ordinary, non-technical NABU | naturgucker participants and interested members of the German public.
+
+A typical user has uploaded a hornet observation, possibly including a photograph, and wants to:
+
+* see that citizen contributions are represented;
+* understand where hornet observations have been reported;
+* distinguish reports of the Asian hornet, European hornet and nests;
+* see how campaign activity develops over time;
+* understand that displayed numbers are observation reports, not estimates of animal abundance.
+
+NABU staff and researchers are secondary users.
+
+CORE PRODUCT MESSAGE
+The dashboard must answer this question clearly:
+
+“Where and when have verified hornet observations been reported, and how is public participation contributing to the project?”
+
+This is an observation and participation dashboard. It must not imply that it measures hornet populations, true abundance, displacement, causality or ecological risk.
+
+LANGUAGE
+Use German for the public-facing interface.
+
+Use concise, plain German suitable for a general audience. Avoid technical or scientific jargon wherever possible.
+
+DESIGN FORMAT
+Create one high-quality desktop dashboard page:
+
+* desktop frame approximately 1440 pixels wide;
+* suitable for export as a single PNG;
+* vertically scrollable if required;
+* responsive-looking layout;
+* all components, text, charts and controls must remain editable;
+* use proper alignment, spacing and reusable components;
+* avoid excessive visual decoration.
+
+Create only a visual prototype. Do not connect real APIs, databases, maps or external services.
+
+VISUAL STYLE
+Use a calm, credible, nature-oriented and public-service style.
+
+The design should feel:
+
+* accessible;
+* trustworthy;
+* welcoming;
+* restrained;
+* modern but not corporate;
+* easy for non-technical users to scan.
+
+Use:
+
+* a light neutral background;
+* white cards;
+* dark grey text;
+* subtle borders and shadows;
+* rounded corners used moderately;
+* generous whitespace;
+* clear visual hierarchy;
+* accessible font sizes;
+* a clean sans-serif font such as Inter.
+
+Use a nature-inspired green as the general interface accent, but do not use green and red as the only way to distinguish species.
+
+Use a consistent, colour-blind-aware species palette:
+
+* Asian hornet – orange or vermilion;
+* European hornet – blue or dark teal;
+* nest observations – purple;
+* neutral or unknown information – grey.
+
+Use the same species colours consistently in the map, legend, KPI details and charts.
+
+Do not reproduce an official NABU design or logo. Use small editable placeholders labelled:
+
+* “NABU Logo”
+* “CorrelAid Logo”
+
+PAGE STRUCTURE
+
+1. HEADER
+
+Create a clean header containing:
+
+* placeholder NABU and CorrelAid logos;
+* main title: “Hornissen-Beobachtungen in Deutschland”;
+* subtitle: “Gemeldete Beobachtungen der Asiatischen und Europäischen Hornisse”;
+* a small information link: “Über das Projekt”;
+* a small methodology link: “Hinweise zu den Daten”.
+
+Directly below the header, display the draft-status banner.
+
+2. SHORT INTRODUCTION
+
+Add a short public-friendly explanation:
+
+“Bürgerinnen und Bürger melden Hornissen-Beobachtungen über NABU | naturgucker. Diese Übersicht zeigt geprüfte Meldungen und macht sichtbar, wie die gemeinsamen Beiträge zum Projekt wachsen.”
+
+Below this, include a compact information notice:
+
+“Wichtig: Die Zahlen zeigen gemeldete Beobachtungen, nicht die tatsächliche Anzahl der Tiere. Regionale Unterschiede können auch durch unterschiedliche Meldeaktivität entstehen.”
+
+Make this notice visible but not alarming.
+
+3. PRIMARY NAVIGATION
+
+Create three horizontal tabs:
+
+* “Aktuelle Übersicht”
+* “Historischer Vergleich”
+* “Forschungsergebnisse”
+
+Set “Aktuelle Übersicht” as active.
+
+Label the other two subtly:
+
+* “Historischer Vergleich” – “optional”
+* “Forschungsergebnisse” – “spätere Phase”
+
+The inactive tabs should demonstrate possible future scope without overwhelming the main dashboard.
+
+4. FILTER BAR
+
+Create one compact filter row directly above the main data area.
+
+Include these editable controls:
+
+A. Zeitraum
+
+* dropdown with “Aktuelle Kampagne” selected;
+* optional choices such as “2026”, “2025”, “2024”, “2023”, “2022”;
+* historical data should begin with 2022;
+* include a small label showing that the exact campaign period is still to be confirmed.
+
+B. Art oder Meldungstyp
+
+Use segmented buttons or checkboxes:
+
+* “Asiatische Hornisse”
+* “Europäische Hornisse”
+* “Nest”
+* “Alle anzeigen”
+
+C. Region
+
+Dropdown:
+
+* “Deutschland gesamt”
+* individual federal states as later options.
+
+D. Darstellungsart
+
+Create a simple selector:
+
+* “Beobachtungspunkte”
+* “Nach Region zusammengefasst”
+
+Set “Beobachtungspunkte” as selected.
+
+Mark the aggregated regional view as optional because the final visualization method has not yet been approved.
+
+E. Data-quality indicator
+
+Add a non-interactive badge:
+
+“Nur geprüfte Meldungen mit Foto”
+
+Add a small tooltip icon explaining:
+
+“Die endgültige Prüfung und technische Filterung der Meldungen muss noch mit NABU abgestimmt werden.”
+
+Do not include too many filters. Do not include scientific variables such as weather, habitats or protected areas in the main filter row.
+
+5. KPI SUMMARY
+
+Place four concise KPI cards below the filters.
+
+Use obviously illustrative placeholder values, not realistic claims.
+
+Card 1:
+
+* label: “Geprüfte Meldungen”
+* placeholder value: “1.248”
+* note: “im ausgewählten Zeitraum”
+
+Card 2:
+
+* label: “Asiatische Hornisse”
+* placeholder value: “—”
+* orange species marker
+
+Card 3:
+
+* label: “Europäische Hornisse”
+* placeholder value: “—”
+* blue or teal species marker
+
+Card 4:
+
+* label: “Letzte Aktualisierung”
+* value: “TT.MM.JJJJ”
+* note: “geplanter Aktualisierungsrhythmus noch offen”
+
+Use an explicit small label above or below the cards:
+
+“Beispieldaten zur Veranschaulichung”
+
+Do not present the placeholder values as real data.
+
+Do not use a KPI titled “Number of hornets” or “Population”.
+
+6. MAIN MAP SECTION
+
+Make the Germany map the dominant element of the dashboard.
+
+Use a large map card occupying approximately two-thirds of the content width.
+
+Requirements:
+
+* show the outline of Germany;
+* show subtle federal-state boundaries;
+* center the map on Germany;
+* use illustrative observation points;
+* Asian hornet observations use orange or vermilion circles;
+* European hornet observations use blue or teal circles;
+* nest reports use purple diamond or nest-shaped markers;
+* use marker clustering where points overlap;
+* provide zoom controls;
+* provide a reset-map control;
+* provide a fullscreen control;
+* include a scale and attribution placeholder;
+* use a clear, compact legend;
+* avoid excessive marker density.
+
+Sample popup for a selected point:
+
+“Geprüfte Beobachtung”
+“Art: Asiatische Hornisse”
+“Datum: TT.MM.JJJJ”
+“Region: Nordrhein-Westfalen”
+“Foto vorhanden”
+“Position möglicherweise gerundet”
+
+Do not show names, addresses, usernames or personal information.
+
+Do not imply that exact coordinates are finally approved for public display.
+
+Add a small note below the map:
+
+“Die genaue räumliche Darstellung – exakte, gerundete oder regional zusammengefasste Positionen – muss noch mit NABU abgestimmt werden.”
+
+Do not use a heatmap, density contours or overlapping-species analysis in the main MVP view. These visualizations could suggest abundance or ecological relationships that have not been established.
+
+7. FEDERAL-STATE SIDEBAR
+
+To the right of the map, create a compact ranking panel titled:
+
+“Beobachtungen nach Bundesland”
+
+Show a simple ranked list with illustrative horizontal bars:
+
+* Nordrhein-Westfalen
+* Baden-Württemberg
+* Rheinland-Pfalz
+* Hessen
+* Bayern
+* Weitere Bundesländer
+
+Each row should show:
+
+* federal-state name;
+* total report count;
+* a subtle stacked indication of the selected species if space allows.
+
+Include the note:
+
+“Unterschiede können auch durch Bevölkerungsdichte und Meldeaktivität entstehen.”
+
+Add a small control:
+
+“Alle Bundesländer anzeigen”
+
+The sidebar must remain secondary to the map.
+
+8. TIME-TREND SECTION
+
+Below the map, add a clean line or grouped bar chart titled:
+
+“Gemeldete Beobachtungen im Zeitverlauf”
+
+Requirements:
+
+* horizontal axis: weeks or months;
+* vertical axis: “Anzahl der Meldungen”;
+* one orange line or bar series for the Asian hornet;
+* one blue or teal series for the European hornet;
+* optional purple series for nests;
+* allow individual series to be toggled;
+* include illustrative data only;
+* show a subtle “Beispieldaten” label.
+
+The chart should communicate campaign participation over time, not population growth.
+
+Include this note:
+
+“Ein Anstieg der Meldungen kann sowohl tatsächliche Veränderungen als auch erhöhte Aufmerksamkeit oder Meldeaktivität widerspiegeln.”
+
+9. PARTICIPATION MESSAGE
+
+Add a positive but restrained public-participation card:
+
+Title:
+
+“Jede geprüfte Meldung unterstützt das Projekt”
+
+Text:
+
+“Mit Ihrer Beobachtung helfen Sie dabei, die Verbreitung von Hornissen besser zu dokumentieren. Die Karte und die Zusammenfassungen werden aus den gemeinsam gemeldeten Daten erstellt.”
+
+Add a simple button:
+
+“Beobachtung melden”
+
+Mark the button as a placeholder link and do not connect it to a real service.
+
+10. OPTIONAL OR LATER FEATURES
+
+Near the bottom, create a visually separate, collapsed or muted section titled:
+
+“Mögliche spätere Erweiterungen”
+
+Represent these as small outline cards, not active dashboard features:
+
+* “Historischer Vergleich ab 2022”
+* “Vergleich ausgewählter Jahre”
+* “Zusätzliche Diagramme”
+* “Lebensraum und Landnutzung”
+* “Schutzgebiete”
+* “Stadt-Land-Vergleich”
+* “Wetter und Ausbreitung”
+* “Ergebnisse der Forschungsfragen”
+
+Clearly label the entire group:
+
+“Nicht Teil der bestätigten Hauptansicht – abhängig von Daten, Methodik und NABU-Freigabe”
+
+Do not create ecological conclusions, displacement indicators, habitat correlations or risk scores.
+
+11. FOOTER AND DATA TRANSPARENCY
+
+Create a compact footer containing:
+
+* “Datenquelle: NABU | naturgucker / GBIF – genaue Auswahl noch zu bestätigen”
+* “Darstellung: CorrelAid Berlin”
+* “Beobachtungsdaten können nachträglich geprüft, geändert oder entfernt werden.”
+* “Stand: Entwurf”
+* placeholders for “Datenschutz”, “Methodik” and “Kontakt”.
+
+SCIENTIFIC AND DATA-INTEGRITY REQUIREMENTS
+
+The interface must consistently use these terms:
+
+* “Beobachtungen”
+* “Meldungen”
+* “geprüfte Meldungen”
+* “Meldungen mit Foto”
+
+Avoid these terms unless explicitly explained:
+
+* “Population”
+* “Bestand”
+* “Abundanz”
+* “Verdrängung”
+* “Ausbreitungsgeschwindigkeit”
+* “Risiko”
+* “Kausalität”
+
+Never imply:
+
+* that one report represents one unique animal;
+* that more reports automatically mean more animals;
+* that the Asian hornet is displacing the European hornet;
+* that the map provides complete geographic coverage;
+* that regions with fewer reports have fewer hornets;
+* that the historical and current datasets are directly comparable without methodological review.
+
+MOCKUP STATUS AND ASSUMPTIONS PANEL
+
+Add a small editable side note or bottom panel for stakeholder review titled:
+
+“Offene Entscheidungen”
+
+Include exactly these concise items:
+
+* endgültiger Umfang des Dashboards;
+* Dashboard oder statische Diagramme;
+* Datenbereitstellung und Filterung;
+* Umgang mit Fotoprüfung;
+* räumliche Genauigkeit der Kartenpunkte;
+* Hosting, Kosten und langfristige Wartung;
+* Aktualisierungsrhythmus;
+* fachliche und redaktionelle Freigabe durch NABU.
+
+This panel should be visible in the stakeholder mockup but visually separate from the public dashboard interface. It can look like an annotation area attached to the right side of the main frame.
+
+DESIGN PRIORITIES
+
+Prioritize in this order:
+
+1. clarity for ordinary users;
+2. accurate framing of observation data;
+3. map-first information hierarchy;
+4. visible public participation value;
+5. simple stakeholder discussion;
+6. editability;
+7. visual polish.
+
+Do not prioritize:
+
+* decorative illustrations;
+* complex animations;
+* technical architecture;
+* login functions;
+* administration screens;
+* live data connections;
+* advanced analytics;
+* predictive models;
+* dense scientific dashboards;
+* dark mode;
+* mobile screens;
+* multiple alternative designs.
+
+FINAL OUTPUT
+
+Generate one coherent desktop dashboard mockup with:
+
+* a simple public-facing structure;
+* a dominant Germany map;
+* clear filters;
+* four summary cards;
+* federal-state counts;
+* one time-trend chart;
+* participation messaging;
+* visible scientific caveats;
+* future features clearly separated;
+* stakeholder decision notes;
+* illustrative placeholder data;
+* a prominent draft label.
+
+Keep the page simple, realistic and presentation-ready. Every element must be editable. Do not invent final NABU decisions, real observation numbers, infrastructure details or scientific findings.
